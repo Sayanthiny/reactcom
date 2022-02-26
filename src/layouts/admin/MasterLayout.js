@@ -8,7 +8,7 @@ import {Routes,Route,Navigate} from "react-router-dom";
 import routes from "../../routes/routes";
 
 
-const MasterLayout = () => {
+const MasterLayout = ({children}) => {
   return (
     <div className="sb-nav-fixed">
       <Navbar />
@@ -19,7 +19,8 @@ const MasterLayout = () => {
         </div>
       <div id="layoutSidenav_content">
         <main>
-          <Routes>
+          {children}
+          {/* <Routes>
             {routes.map((route,idx)=>{
               return(
                 route.component && (
@@ -37,7 +38,7 @@ const MasterLayout = () => {
               ) 
             })}
             <Navigate from="/admin" to="/admin/dashboard"/>
-          </Routes>
+          </Routes> */}
         </main>
         <Footer />
       </div>
